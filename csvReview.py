@@ -8,6 +8,22 @@ Current pay: $100,000
 
 '''
 
+infile = open('csvFile.csv', 'r')
+csvfile = csv.reader(infile, delimiter = ',')
+
+next(csvfile)
+
+for row in csvfile:
+
+    name = row[0]
+    years = row[1]
+    pay = str(row[2])
+
+    print('Employee Name: ', name, ', Years of service: ', years,', Current pay: ', pay, sep = '')
+    #input()
+
+infile.close()
+
 # 2) create a new csv file called 'wacoRestaurants.csv' using the dictionary. Make a header "Restaurant,Rating"
 restaurants = {
     "Shorty's": 4.6,
@@ -20,7 +36,6 @@ restaurants = {
     "In-n-out": 3.7,
     "Torchy's": 4.6
 }
-
 
 # 3) using the csv file you just created, read through it and print out restaurants if they have a rating below a 4.0. 
 # Create a new dictionary with the name as the key and rating as the value
